@@ -89,6 +89,61 @@ class ConvTranspose2d(Conv2d):
       result += self.bias
     return result
 
+class PositionalEncoder(Module):
+  def __init__(self, d_model, max_seq_len):
+    super().__init__()
+    '''
+    Need positional matrix
+
+    Update Positional matrix values
+
+    Update embeddings
+    '''
+    pe = el, max_seq_len)
+    PE(pos,2i) =sin(pos/100002i/dmodel)
+    PE(pos,2i+1) =cos(pos/100002i/dmodel)
+
+class MultiHeadedAttention(Module):
+  def __init__(self, *, d_model, num_heads):
+    super().__init__()
+    '''
+    input: dimension of tokens, number of heads we want to use?
+
+    needs to initialize weights wK, wQ, wV for K, Q, and V
+    based on num_heads
+
+    shape = (d_model, d_model, num_heads)?
+    '''
+    pass
+
+  def scaled_dot_product_attention(self, q, k, v, mask):
+    '''
+    Attention(K, Q, V) = softmax_k ( Q * K^T / sqrt(d) ) * V
+
+    what is the dimension of Q, K, V?
+    shape Q == (seq_len_q, d_k)
+    
+    '''
+    pass
+  def call():
+    '''
+    input: K, Q, V shape=(d_model, N), where N is length of sentence we're passing in
+
+
+
+
+    forward pass
+
+    return new V
+    '''
+    pass
+
+class Encoder(Module):
+  pass
+
+class Decoder(Module):
+  pass
+
 # -= Losses =-
 
 class Loss(Module):
